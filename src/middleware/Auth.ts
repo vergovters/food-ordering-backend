@@ -9,6 +9,15 @@ export const jwtCheck = auth({
     tokenSigningAlg: 'RS256'
 });
 
+declare global {
+    namespace Express {
+      interface Request {
+        userId: string;
+        auth0Id: string;
+      }
+    }
+  }
+
 export const jwtParse = async (
     req: Request,
     res: Response,
