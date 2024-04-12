@@ -4,6 +4,7 @@ import "dotenv/config"
 import mongoose from "mongoose";
 import UserRouter from "./routes/UserRoutes"
 import RestaurantRouter from "./routes/RestaurantRoutes"
+import ResRoutes from "./routes/ResRoutes"
 import {v2 as cloudinary} from "cloudinary"
 
 mongoose
@@ -22,6 +23,7 @@ app.use(cors());
 
 app.use("/api/user", UserRouter)
 app.use("/api/restaurant", RestaurantRouter)
+app.use("/api/res", ResRoutes)
 
 app.listen(7000, ()=>{
     console.log("server started on 7000")
