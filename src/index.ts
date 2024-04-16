@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import UserRouter from "./routes/UserRoutes"
 import RestaurantRouter from "./routes/RestaurantRoutes"
 import ResRoutes from "./routes/ResRoutes"
+import OrderRouter from "./routes/OrderRoutes"
 import {v2 as cloudinary} from "cloudinary"
 
 mongoose
@@ -24,6 +25,7 @@ app.use(cors());
 app.use("/api/user", UserRouter)
 app.use("/api/restaurant", RestaurantRouter)
 app.use("/api/res", ResRoutes)
+app.use("/api/order", OrderRouter)
 
 app.listen(7000, ()=>{
     console.log("server started on 7000")
